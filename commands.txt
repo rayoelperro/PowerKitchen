@@ -1,0 +1,25 @@
+-Compiler:
+include <name>: load library
+set <lib> <property> <value>: set property
+do <lib> <action>: starts an action
+insert <name> <args...>: load library setting the default properties
+import <mod>: load module as library
+address <host:port>: set the ip on lan
+lansearch: search the ip of the attacker inside the network
+port <port>: if is bigguer than cero, it will set the socket were the app will listen
+visible <bool>: If it is true, the result program's console will be visible, by default is false
+-Listenner:
+connect <host:port>: set the address of the remote device
+end: close the connection with the remote device
+interface <lib>: change the messaging interface to another library
+send <msg>: send the message to the remote device
+open <port>: open a serven listening in a port
+-Global:
+restart: remove all the compiler typed lines
+build: create a .go and .exe with the compiled program
+comment <>: type a comment (will not be parsed)
+exit: close the console
+clear: clear the screen
+output <name>: set the output file name
+inspect <lib>: return a lib if it exists
+getall <lib>: execute all the requirements for a library

