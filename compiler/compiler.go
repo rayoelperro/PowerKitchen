@@ -163,14 +163,14 @@ func UseLine(rsfl *ResultFile, ln []Token, libs *LibCollection) error {
 
 func Executable(gofile string, visible bool) error {
 	arguments := []string{"go", "build"}
-	if runtime.GOOS == "linux" {
-		arguments = append([]string{"GOOS=windows", "GOARCH=386"}, arguments...)
-	}
 	if !visible {
 		arguments = append(arguments, "-ldflags", "-H=windowsgui")
 	}
 	arguments = append(arguments, filepath.Base(gofile))
 	cmd := exec.Command(arguments[0], arguments[1:]...)
+	if runtime.GOOS == "linux" {
+		cmd.Env = append(os.Environ(), "GOOS=windows", "GOARCH=386")
+	}
 	cmd.Dir = filepath.Dir(gofile)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stdout
